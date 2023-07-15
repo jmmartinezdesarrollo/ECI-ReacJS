@@ -102,6 +102,7 @@ export default function ECIFillText(props) {
           </Typography>
           <Box sx={{ display: "flex",
             flexWrap: "wrap",
+            padding: "15px 15px 45px 15px!important",
             "& > :not(style)": {
               m: 0,
               width: "100%",

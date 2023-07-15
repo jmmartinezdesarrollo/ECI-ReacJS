@@ -7,6 +7,8 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 
 const style = {
+  width: {md: "100%"},
+  maxWidth: {sx: "230px", md: "700px"},
   position: "absolute",
   display: "flex",
   flexDirection: "column",
@@ -14,11 +16,10 @@ const style = {
   top: "30%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "background.paper",
   boxShadow: "0px 10px 24px #0000001F",
   borderRadius: "20px",
-  p: "50px",
+  p: {xs:"20px", md:"50px"},
 };
 
 export default function ECIModal(props) {
