@@ -5,7 +5,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import DeleteIcon from "@mui/icons-material/Delete";
 import CachedIcon from "@mui/icons-material/Cached";
 import ECIModal from "./ECIModal";
 import Checkbox from "@mui/material/Checkbox";
@@ -127,7 +126,7 @@ export default function ECIFillText(props) {
           <Button
             onClick={deleteItems}
             variant="outlined"
-            disabled={anyItemSelected || props.items.length == 0 }
+            disabled={anyItemSelected || props.items.length === 0 }
           >
             Delete 
           </Button>
