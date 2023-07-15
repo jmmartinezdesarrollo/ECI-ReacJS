@@ -134,7 +134,7 @@ export default function ECIFillText(props) {
          
           
           <Badge badgeContent={cacheItems.length  } color="primary">
-          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" startIcon={<CachedIcon />}>           
+          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" >      <CachedIcon />     
           </Button>
           </Badge>
           
@@ -147,7 +147,7 @@ export default function ECIFillText(props) {
           </Button>
           </Box>
           
-          <ECIModal value={modalValue}></ECIModal>
+          <ECIModal value={modalValue} setCacheItems={setCacheItems} items={props.items}></ECIModal>
         </Stack>
         </Box>
      

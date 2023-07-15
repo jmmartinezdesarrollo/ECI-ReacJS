@@ -32,7 +32,12 @@ export default function ECIModal(props) {
 
   const saveItem = () => {
     if (hasValue) {
+      let items = props.items   
       props.value(value);
+      props.setCacheItems((prev)=>[
+        ...prev,
+        items
+      ])
       handleClose();
       resetValue();
     }
