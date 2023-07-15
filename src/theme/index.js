@@ -24,14 +24,6 @@ export const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        contained: {     
-          width:"140px",   
-          height:"50px", 
-          color:"##FFFFFF",
-          border: "1px solid #324BFF",
-          borderRadius: "50px",
-          backgroundColor: '#324BFF',
-        },
         outlined: {     
           width:"140px",   
           height:"50px", 
