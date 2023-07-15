@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 import CachedIcon from "@mui/icons-material/Cached";
 import ECIModal from "./ECIModal";
 import Checkbox from "@mui/material/Checkbox";
+import Badge from '@mui/material/Badge';
 
 export default function ECIFillText(props) {
   const [cacheItems, setCacheItems] = React.useState([]);
@@ -129,10 +130,15 @@ export default function ECIFillText(props) {
           md: "16px 16px 16px 0 !important"}, 
           flexDirection : {xs: "column", md: "row"} ,gap:{xs:"10px", md:0}}}>
           <Box sx={{display: "flex", gap: "10px"}}>
-          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" startIcon={<CachedIcon />}>
-           {cacheItems.length > 0 ? cacheItems.length  : null }
+
+         
+          
+          <Badge badgeContent={cacheItems.length  } color="primary">
+          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" startIcon={<CachedIcon />}>           
           </Button>
-          <Button
+          </Badge>
+          
+          <Button          
             onClick={deleteItems}
             variant="outlined"
             disabled={anyItemSelected || props.items.length === 0 }
