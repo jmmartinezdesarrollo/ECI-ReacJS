@@ -4,17 +4,21 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
 
 const style = {
   position: "absolute",
+  display: "flex",
+  flexDirection: "column",
+  gap: "25px",
   top: "30%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  boxShadow: "0px 10px 24px #0000001F",
+  borderRadius: "20px",
+  p: "50px",
 };
 
 export default function ECIModal(props) {
@@ -46,18 +50,25 @@ export default function ECIModal(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2" >
+          <Typography id="modal-modal-title" variant="p" component="p" >
           Add item to list
           </Typography>
           
+          <Box>
           <TextField
             sx={{ width: "100%" }}
-            variant="filled"
+            placeholder="Type the text here..."
+            variant="outlined"
             onChange={(e) => {
               setValue(e.target.value);
             }}
           />
-          <Box sx={{ margin: "20px 0" }}>
+          </Box>
+     
+          <Stack direction="row" sx={{justifyContent: "flex-end", p : 0 ,  gap: "10px"}}>
+       
+     
+          
             <Button
               variant="contained"
               disabled={value.length === 0}
@@ -66,7 +77,8 @@ export default function ECIModal(props) {
               ADD
             </Button>
             <Button variant="contained" onClick={handleClose}>CANCEL</Button>
-          </Box>
+         
+          </Stack>
         </Box>
       </Modal>
     </div>

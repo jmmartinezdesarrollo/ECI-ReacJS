@@ -1,6 +1,10 @@
 import * as React from "react";
+import { ThemeProvider } from '@mui/material/styles';
+import {theme} from "./theme/index"
 import ECILayout from "./components/ECILayout";
 import ECIFillText from "./components/ECIFillText";
+
+
 function App() {
   const [items, setItems] = React.useState([
     {
@@ -18,9 +22,12 @@ function App() {
   ]);
   return (
     <div className="App">
-      <ECILayout>
+      <ThemeProvider theme={theme}>
+      <ECILayout >
         <ECIFillText items={items} setItems={setItems}></ECIFillText>
       </ECILayout>
+      </ThemeProvider>
+     
     </div>
   );
 }

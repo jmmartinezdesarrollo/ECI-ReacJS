@@ -70,12 +70,15 @@ export default function ECIFillText(props) {
       sx={{
         display: "flex",
         flexWrap: "wrap",
+        width: "100%",
+        maxWidth: "900px",
+        margin: "0 auto",      
         "& > :not(style)": {
-          m: 1,
-          width: "100%",
-          maxWidth: "1300px",
-          margin: "0 auto",
+          p: "50px",
+          borderRadius: "20px",
+         
         },
+        
       }}
     >
       <Paper elevation={4}>
@@ -84,24 +87,28 @@ export default function ECIFillText(props) {
             display: "flex",
             flexWrap: "wrap",
             "& > :not(style)": {
-              m: 1,
+              m: 0,
               width: "100%",
-              padding: 2,
+              padding: "16px",
+             
             },
           }}
         >
-          <Typography variant="h6" component="h1">
-            h1. Heading
+          <Typography align="center"variant="h1" component="h1">
+          This is a technical proof
           </Typography>
-          <Typography variant="subtitle1" component="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            turpis nisl, euismod quis sollicitudin sit amet, imperdiet eu lorem.
-            Nam eu ultrices diam. Nunc consequat ex est, et varius justo
-            placerat vel. Nullam ac pulvinar est. Quisque vitae felis in mi
-            laoreet gravida. Nullam nec augue ultricies lorem vehicula faucibus
-            a a ante.
+          <Typography align="center" variant="p" component="p">
+          Lorem ipsum dolor sit amet consectetur adipiscing, elit mus primis nec inceptos. Lacinia habitasse arcu molestie maecenas cursus quam nunc, hendrerit posuere augue fames dictumst placerat porttitor, dis mi pharetra vestibulum venenatis phasellus.
           </Typography>
-
+          <Box sx={{ display: "flex",
+            flexWrap: "wrap",
+            "& > :not(style)": {
+              m: 0,
+              width: "100%",
+              padding: "10px",
+             
+            },border: "1px solid #CCCCCC",
+            backgroundColor:"#F7F7F7"}}>
           {props.items.map((item) => {
             return (
               <FormControlLabel
@@ -114,13 +121,14 @@ export default function ECIFillText(props) {
                   />
                 }
                 label={item.value}
-                sx={{ backgroundColor: item.selected ? "aliceblue" : null }}
+                sx={{ backgroundColor: item.selected ? "#324BFF" : null, color: item.selected ? "#FFFFFF" : "#333333"}}
               />
             );
           })}
-        </Box>
-        <Stack direction="row" spacing={2}>
-          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="outlined" startIcon={<CachedIcon />}>
+          </Box>
+          <Stack direction="row" sx={{justifyContent: "space-between", p :"16px 16px 16px 0 !important"}}>
+          <Box sx={{display: "flex", gap: "10px"}}>
+          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" startIcon={<CachedIcon />}>
            {cacheItems.length > 0 ? cacheItems.length  : null }
           </Button>
           <Button
@@ -130,9 +138,13 @@ export default function ECIFillText(props) {
           >
             Delete 
           </Button>
+          </Box>
+          
           <ECIModal value={modalValue}></ECIModal>
         </Stack>
-      </Paper>
+        </Box>
+     
+      </Paper> 
     </Box>
   );
 }
