@@ -71,15 +71,14 @@ export default function ECIFillText(props) {
         display: "flex",
         flexWrap: "wrap",
         width: "100%",
-        maxWidth: "900px",
+        maxWidth: "900px",       
         margin: "0 auto",      
         "& > :not(style)": {
-          p: "50px",
+          p: { xs: "10px", sm: "50px" },
           borderRadius: "20px",
          
-        },
-        
-      }}
+        },              
+      }}    
     >
       <Paper elevation={4}>
         <Box
@@ -126,7 +125,9 @@ export default function ECIFillText(props) {
             );
           })}
           </Box>
-          <Stack direction="row" sx={{justifyContent: "space-between", p :"16px 16px 16px 0 !important"}}>
+          <Stack sx={{justifyContent: "space-between", p: { xs: "10px 0px !important;", 
+          md: "16px 16px 16px 0 !important"}, 
+          flexDirection : {xs: "column", md: "row"} ,gap:{xs:"10px", md:0}}}>
           <Box sx={{display: "flex", gap: "10px"}}>
           <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" startIcon={<CachedIcon />}>
            {cacheItems.length > 0 ? cacheItems.length  : null }
