@@ -89,12 +89,12 @@ export default function ECIFillText(props) {
             "& > :not(style)": {
               m: 0,
               width: "100%",
-              padding: "16px",
+              padding: {xs:"25px 10px;"}
              
             },
           }}
         >
-          <Typography align="center"variant="h1" component="h1">
+          <Typography align="center"variant="h1" component="h1" sx={{fontSize:{xs: "30px", md: "40px"}}} >
           This is a technical proof
           </Typography>
           <Typography align="center" variant="p" component="p">
@@ -102,7 +102,7 @@ export default function ECIFillText(props) {
           </Typography>
           <Box sx={{ display: "flex",
             flexWrap: "wrap",
-            padding: "15px 15px 45px 15px!important",
+            padding: {xs: "10px 10px 20px 10px!important", md:"15px 15px 45px 15px!important"},
             "& > :not(style)": {
               m: 0,
               width: "100%",
@@ -122,20 +122,20 @@ export default function ECIFillText(props) {
                   />
                 }
                 label={item.value}
-                sx={{ backgroundColor: item.selected ? "#324BFF" : null, color: item.selected ? "#FFFFFF" : "#333333"}}
+                sx={{ margin:"1px 0", backgroundColor: item.selected ? "#324BFF" : null, color: item.selected ? "#FFFFFF" : "#333333"}}
               />
             );
           })}
           </Box>
-          <Stack sx={{justifyContent: "space-between", p: { xs: "10px 0px !important;", 
+          <Stack sx={{justifyContent: "space-between", p: { xs: "20px 0px !important;", 
           md: "16px 16px 16px 0 !important"}, 
-          flexDirection : {xs: "column", md: "row"} ,gap:{xs:"10px", md:0}}}>
+          flexDirection : {xs: "column", md: "row"} ,gap:{xs:"25px", md:0}}}>
           <Box sx={{display: "flex", gap: "10px"}}>
 
          
           
           <Badge badgeContent={cacheItems.length  } color="primary">
-          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" >      <CachedIcon />     
+          <Button disabled={cacheItems.length === 0 } onClick={cachedItemsButton} variant="onlyIcon" ><CachedIcon />     
           </Button>
           </Badge>
           
@@ -143,6 +143,7 @@ export default function ECIFillText(props) {
             onClick={deleteItems}
             variant="outlined"
             disabled={anyItemSelected || props.items.length === 0 }
+            sx={{width : {xs:"100%", md:"140px"}}} 
           >
             Delete 
           </Button>

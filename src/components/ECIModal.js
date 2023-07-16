@@ -46,7 +46,7 @@ export default function ECIModal(props) {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="contained">
+      <Button onClick={handleOpen} variant="contained" sx={{width : {xs:"100%", md:"140px"}}} >
         ADD
       </Button>
       <Modal

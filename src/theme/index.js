@@ -3,21 +3,26 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
 
   typography: {
-    fontFamily:'Montserrat,Roboto',
+   
     h1: {
       fontSize: "40px",
-      color:"#333333s"
+      color:"#333333",
+      fontFamily:'Montserrat',
+      padding:"0px !important"
     }, 
     p: {
       fontSize: "18px",
-      color:"#333333"
+      color:"#333333",
+      fontFamily:'Montserrat',
     },
     label: {
       fontSize: "18px",
-      color:"#333333"
+      color:"#333333",
+      fontFamily:'Montserrat',
     },
     button: {
       fontSize: "16px",
+      fontFamily:'Montserrat',
       
     },
   },
@@ -29,7 +34,8 @@ export const theme = createTheme({
           height:"50px", 
           color:"##FFFFFF",
           border: "1px solid #324BFF",
-          borderRadius: "50px",     
+          borderRadius: "50px",   
+          fontFamily:'Montserrat',  
           
         },
         contained: {     
@@ -38,6 +44,7 @@ export const theme = createTheme({
           color:"##FFFFFF",
           border: "1px solid #324BFF",
           borderRadius: "50px",
+          fontFamily:'Montserrat',
           '&:disabled': { 
             color:"rgba(0, 0, 0, 0.12)",
             border: "1px solid rgba(0, 0, 0, 0.12)",        
@@ -68,6 +75,7 @@ export const theme = createTheme({
           border: "1px solid #324BFF",
           borderRadius: "50px",
           backgroundColor: '#324BFF',
+          fontFamily:'Montserrat',
         },
       }
     },
